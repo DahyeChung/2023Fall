@@ -1,0 +1,19 @@
+{
+	"talkers": [
+		{
+			"talkerId": 1,
+			"talkerName": "Andy",
+			"talkerText": "Welcome to our town. Even Red Pawns are welcome here."
+		},
+		{
+			"talkerId": 2,
+			"talkerName": "Frank",
+			"talkerText": "Legends tell of a game developer who will come to save our land. Is that you?"
+		},
+		{
+			"talkerId": 3,
+			"talkerName": "Fabian",
+			"talkerText": "Bah! A Red Pawn. Like anyone could trust the likes of you!"
+		}
+	]
+}
