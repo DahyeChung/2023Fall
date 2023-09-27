@@ -66,6 +66,7 @@ namespace GAME331.Lab04
                     //LAB TASK #1: Implement FleeTarget
                     //TODO: Move away from target
                     //HINT: Set desiredDirection = to a mathmatical operation on vectorToTarget
+                    desiredDirection = -vectorToTarget; //플레이어 추적이 아닌 플레이어로부터 도망감
                     break;
 
                 case FlockingMode.MaintainDistance:
@@ -83,6 +84,14 @@ namespace GAME331.Lab04
                         // {
                         //    code_for_when_codition_is_false
                         // }
+                        if (distanceToTarget < minDistanceToTarget)
+                        {
+                            desiredDirection = -vectorToTarget;
+                        }
+                        else if (distanceToTarget > maxDistanceToTarget)
+                        {
+                            desiredDirection = vectorToTarget;
+                        }
                     }
                     break;
 
@@ -106,6 +115,7 @@ namespace GAME331.Lab04
                         //TODO: Accumulate vectors away from hazards in avoidance vector
                         //HINT: This loop runs once for every hazard in the level
                         //HINT: Try setting avoidanceVector to itself plus a vector pointing away from a hazard
+                        avoidanceVector += vectorAwayFromHazard;
                     }
                 }
 
@@ -117,6 +127,8 @@ namespace GAME331.Lab04
                     //LAB TASK #4: Implement hazard avoidance, part 2
                     //TODO: Set the value of desiredDirection to 50% desiredDirection and 50% avoidanceVector
                     //HINT: Set desiredDirection = a mathmatical formula sums half of desiredDirection and half of avoidanceVector
+                    desiredDirection = (0.5f * desiredDirection) + (0.5f * avoidanceVector);
+
                 }
             }
 
