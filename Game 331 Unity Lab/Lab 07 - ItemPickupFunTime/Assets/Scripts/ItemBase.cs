@@ -6,12 +6,13 @@ public class ItemBase : MonoBehaviour {
 
     public string ItemName = "NAMELESS_ITEM";
     public Sprite ItemHUDSprite = null;
-    public float CooldownSeconds = 1.0f;
-    float CurrentCooldownSeconds = 0.0f;
+    public float CooldownSeconds = 1.0f;    //아이템 사용 직후 쿨타임
+    float CurrentCooldownSeconds = 0.0f;    //아이템의 현재 쿨타임
 
     public GameObject PickupItemPrefab;
 
-    public void UpdateCooldowns () {
+    public void UpdateCooldowns () { 
+        //아이템 쿨타임 업데이트 
 		if(CurrentCooldownSeconds > 0.0f)
         {
             CurrentCooldownSeconds -= Time.deltaTime;
